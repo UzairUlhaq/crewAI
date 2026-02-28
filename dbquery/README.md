@@ -39,21 +39,20 @@ pip install uv
 
 Next, navigate to your project directory and install the dependencies:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
+Lock the dependencies and install them by using the CLI command:
 ```bash
-crewai install
+uv pip install crewai
 uv pip install crewai-tools[sqlalchemy]
 uv pip install psycopg2-binary
 ```
 
 ### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+*Add your `OPENAI_API_KEY` into the `.env` file*
+*Add your `MAX_TOKEN_LIMIT` into the `.env` file*
+*Add your `DATABASE_URL=postgresql://user:pass@localhost:5432/temp_db` into the `.env` file*
 
-**Add your `MAX_TOKEN_LIMIT` into the `.env` file**
-
-**Add your `DATABASE_URL=postgresql://user:pass@localhost:5432/temp_db` into the `.env` file**
-
+- Modify `crewAI/dbquery/.env` to define secrets
 - Modify `src/dbquery/config/agents.yaml` to define your agents
 - Modify `src/dbquery/config/tasks.yaml` to define your tasks
 - Modify `src/dbquery/crew.py` to add your own logic, tools and specific args
